@@ -46,7 +46,7 @@ Menjawab soal **Quiz PBWL (2026)**:
 | --- | --- |
 | Framework | **Laravel 13** |
 | Bahasa | PHP ≥ 8.3 |
-| Database | MySQL / MariaDB (**port 3307** di mesin asli; lihat `.env`) |
+| Database | MySQL / MariaDB (**port 3307** di mesin asli; lihat `.env.example`) |
 | UI | Bootstrap 5 (aset statis di `public/css`, `public/js`) |
 | ORM | Eloquent |
 | Auth | Session + `password_verify()` |
@@ -116,9 +116,8 @@ erDiagram
    - **phpMyAdmin**: buka menu **Import**, pilih `database.sql`, URL berjalan di `http://127.0.0.1:3307` (sesuaikan bila port Anda 3306); atau
    - Terminal: `mysql -u root -p laundry_quiz < database.sql`
 3. **Pasang dependensi**:  `composer install`
-4. **Periksa `.env`** — bagian database sudah mengarah ke `laundry_quiz` (host `127.0.0.1`, port `3307`, user `root`, password kosong). Sesuaikan dengan instalasi Anda.
+4. **Siapkan `.env`** — salin dari `.env.example`, lalu jalankan `php artisan key:generate`. Sesuaikan bagian database ke `laundry_quiz` (host `127.0.0.1`, port `3307`, user `root`, password kosong).
    - Bila port MySQL Anda **3306**, ubah `DB_PORT=3307` → `DB_PORT=3306`.
-   - `APP_KEY` sudah terisi untuk latihan.
 5. **Jalankan**:
    ```bash
    php artisan serve --port=8001

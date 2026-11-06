@@ -1,10 +1,8 @@
 *.log
 .DS_Store
-# .env SENGAJA di-commit untuk repo latihan ini (agar langsung bisa dijalankan).
-# Untuk proyek nyata, hapus komentar di bawah dan jangan pernah commit .env.
-# .env
-# .env.backup
-# .env.production
+.env
+.env.*
+!.env.example
 .phpactor.json
 .phpunit.result.cache
 /.codex
